@@ -1,0 +1,8 @@
+{
+  "name": "fastapi-microservice",
+  "private": true,
+  "scripts": {
+    "start": "python src/main.py",
+    "test": "python -m pytest tests"
+  }
+}
