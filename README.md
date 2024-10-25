@@ -61,6 +61,19 @@ alembic revision --autogenerate -m "Initial migration"
 alembic upgrade head
 ```
 
+5. Build docker image:
+
+```bash
+docker build -t fastapi-app .
+```
+
+6. Run docker container:
+
+```bash
+docker run -p 8000:8000 fastapi-app
+# docker run -p 8000:8000 -w /app/src fastapi-app
+```
+
 ## Running the Application
 
 Start the development server:

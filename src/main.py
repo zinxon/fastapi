@@ -19,6 +19,7 @@ from services.storage_service import StorageService
 from services.moonreader_service import MoonReaderService
 import os
 from dotenv import load_dotenv  
+from mangum import Mangum # this line is where we import Mangum
 
 load_dotenv()
 app = FastAPI(
@@ -26,6 +27,7 @@ app = FastAPI(
     description="A scalable FastAPI microservice with PostgreSQL",
     version="1.0.0"
 )
+handler = Mangum(app) # this line is where we use Mangum
 
 # Initialize services
 external_service = ExternalService()
@@ -135,4 +137,5 @@ async def delete_highlight(
     return {"status": "Success", "message": "Highlight deleted"}
 
 if __name__ == "__main__":
-    uvicorn.run("main:app", host="0.0.0.0", port=8000, reload=True)
+    uvicorn.run("main:app", host="0.0.0.0", port=int(os.getenv("PORT", 8000)), reload=True)
+
