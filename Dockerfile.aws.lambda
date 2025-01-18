@@ -18,3 +18,4 @@ EXPOSE 8000
 ENV PYTHONPATH=/app/src
 
 CMD ["main.handler"]
+# https://blog.searce.com/fastapi-container-app-deployment-using-aws-lambda-and-api-gateway-6721904531d0

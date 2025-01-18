@@ -89,7 +89,7 @@ The API will be available at `http://localhost:8000`
 Now we can build the container for AWS Lambda which will use the Mangum handler. We use another Dockerfile which will use a base image provided by AWS :
 
 ```bash
-docker build -t fastapi-app-lambda . -f Dockerfile.aws.lambda
+docker build -t zinxon/fastapi:latest . -f Dockerfile.aws.lambda
 ```
 
 ## Run the AWS Lambda container for local test
@@ -97,7 +97,7 @@ docker build -t fastapi-app-lambda . -f Dockerfile.aws.lambda
 Let's start the container to test the lambda locally :
 
 ```bash
-docker run -p 9000:8080 fastapi-app-lambda:latest
+docker run -p 9000:8080 zinxon/fastapi:latest
 ```
 
 ### Test the Lambda
